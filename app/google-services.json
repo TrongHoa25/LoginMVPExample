@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "465421382143",
+    "firebase_url": "https://myloginapp-d832e.firebaseio.com",
+    "project_id": "myloginapp-d832e",
+    "storage_bucket": "myloginapp-d832e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465421382143:android:76bdafdc19c05203d977ca",
+        "android_client_info": {
+          "package_name": "com.example.loginmvpexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "465421382143-hpaj0rmgv30lblpm8a5rcfhqfc02knb3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh6h11qzd6HduOBVH7LnFtl4wQQTEqVYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "465421382143-hpaj0rmgv30lblpm8a5rcfhqfc02knb3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465421382143:android:b71c7924cad77452d977ca",
+        "android_client_info": {
+          "package_name": "com.sunasterisk.loginapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "465421382143-hpaj0rmgv30lblpm8a5rcfhqfc02knb3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh6h11qzd6HduOBVH7LnFtl4wQQTEqVYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "465421382143-hpaj0rmgv30lblpm8a5rcfhqfc02knb3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
