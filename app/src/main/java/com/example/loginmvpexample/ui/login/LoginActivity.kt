@@ -7,13 +7,22 @@ import android.widget.Toast
 import com.example.loginmvpexample.ui.main.MainActivity
 import com.example.loginmvpexample.R
 import com.example.loginmvpexample.data.source.UserRepository
+import com.example.loginmvpexample.data.source.local.UserLocalDataSource
+import com.example.loginmvpexample.data.source.remote.UserRemoteDataSource
+import com.example.loginmvpexample.ui.main.UserPresenter
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(), LoginContract.View {
     private lateinit var mLoginPresenter: LoginPresenter
+    private lateinit var mUserRepository: UserRepository
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        mUserRepository = UserRepository.getsInstance(
+            UserLocalDataSource.getsInstance(),
+            UserRemoteDataSource.getsInstance()
+        )
+        mLoginPresenter = LoginPresenter(mUserRepository)
         btn_register_login.setOnClickListener {
             mLoginPresenter.handleLogin(edt_email_login.text.toString().trim(), edt_password_login.toString().trim())
         }
