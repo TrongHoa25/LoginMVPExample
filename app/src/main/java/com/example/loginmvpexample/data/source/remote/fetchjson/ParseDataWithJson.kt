@@ -1,6 +1,7 @@
 package com.example.loginmvpexample.data.source.remote.fetchjson
 
 import com.example.loginmvpexample.data.model.User
+import com.example.loginmvpexample.data.model.UserEntry
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.BufferedReader
@@ -37,7 +38,7 @@ class ParseDataWithJson {
     fun parseJsonToData(jsonObject: JSONObject): List<User>? {
         val userList: MutableList<User> = ArrayList()
         try {
-            val jsonArray = jsonObject.getJSONArray(User.UserEntry.USER)
+            val jsonArray = jsonObject.getJSONArray(UserEntry.USER)
             for (i in 0 until jsonArray.length()) {
 
                 val userJson = jsonArray.getJSONObject(i)
@@ -50,16 +51,16 @@ class ParseDataWithJson {
         return userList
     }
 
-    private fun parseJsonToObject(jsonObjectSong: JSONObject): User {
-        var song: User? = null
+    private fun parseJsonToObject(jsonObjectUser: JSONObject): User {
+        var user: User? = null
         try {
-            song = User.UserBuilder().email(
-                jsonObjectSong.getString(User.UserEntry.EMAIL))
-                .password(jsonObjectSong.getString(User.UserEntry.PASSWORD))
-                .build()
+            jsonObjectUser?.let {
+                user = User(email = jsonObjectUser.getString(UserEntry.EMAIL),
+                password = jsonObjectUser.getString(UserEntry.PASSWORD))
+            }
         } catch (e: JSONException) {
             e.printStackTrace()
         }
-        return song!!
+        return user!!
     }
 }
