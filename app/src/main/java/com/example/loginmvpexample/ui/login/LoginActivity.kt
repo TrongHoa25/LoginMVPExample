@@ -18,10 +18,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        mUserRepository = UserRepository.getsInstance(
-            UserLocalDataSource.getsInstance(),
-            UserRemoteDataSource.getsInstance()
-        )
+        mUserRepository = UserRepository.instance
         mLoginPresenter = LoginPresenter(mUserRepository)
         btn_register_login.setOnClickListener {
             mLoginPresenter.handleLogin(edt_email_login.text.toString().trim(), edt_password_login.toString().trim())

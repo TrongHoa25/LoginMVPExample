@@ -22,10 +22,7 @@ class MainActivity : AppCompatActivity(), UserContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mUserRepository = UserRepository.getsInstance(
-            UserLocalDataSource.getsInstance(),
-            UserRemoteDataSource.getsInstance()
-        )
+        mUserRepository = UserRepository.instance
         mUserPresenter = UserPresenter(this,mUserRepository)
         mUserPresenter.setView(this)
         mUserPresenter.getUserList()
