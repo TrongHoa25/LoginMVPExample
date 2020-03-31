@@ -9,6 +9,7 @@ class UserRepository(
     private val mUserLocalDataSource: UserLocalDataSource,
     private val mUserRemoteDataSource: UserRemoteDataSource
 ){
+
     private object HOLDER {
         val INSTANCE = UserRepository(
             mUserLocalDataSource = UserLocalDataSource.instance,
@@ -18,6 +19,7 @@ class UserRepository(
      fun getData(listener: OnFetchDataJsonListener<User>) {
         mUserRemoteDataSource.getData(listener)
     }
+
     companion object{
         val instance: UserRepository by lazy {HOLDER.INSTANCE}
     }

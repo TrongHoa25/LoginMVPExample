@@ -6,7 +6,7 @@ import com.example.loginmvpexample.data.source.UserRepository
 import com.example.loginmvpexample.data.source.remote.OnFetchDataJsonListener
 
 class UserPresenter(private val activity: Activity,
-                    private val mUserRepository: UserRepository): UserContract.Presenter{
+                    private val mUserRepository: UserRepository) : UserContract.Presenter{
     private var mView: UserContract.View? = null
     override fun getUserList() {
         mUserRepository.getData(object : OnFetchDataJsonListener<User>{
@@ -15,7 +15,6 @@ class UserPresenter(private val activity: Activity,
             }
 
             override fun onError(e: Exception?) {
-
             }
 
         })
@@ -27,7 +26,6 @@ class UserPresenter(private val activity: Activity,
 
     companion object {
         private var sInstance: UserPresenter? = null
-
         fun getInstance(activity: Activity, mUserRepositoy: UserRepository): UserPresenter {
             if (sInstance == null) {
                 sInstance = UserPresenter(activity, mUserRepositoy)
