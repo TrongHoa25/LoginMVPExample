@@ -13,16 +13,16 @@ import com.example.loginmvpexample.ui.main.UserPresenter
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(), LoginContract.View {
-    private lateinit var mLoginPresenter: LoginPresenter
-    private lateinit var mUserRepository: UserRepository
+    private lateinit var loginPresenter: LoginPresenter
+    private lateinit var userRepository: UserRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        mUserRepository = UserRepository.instance
-        mLoginPresenter = LoginPresenter(mUserRepository)
+        userRepository = UserRepository.instance
+        loginPresenter = LoginPresenter(userRepository)
         btn_register_login.setOnClickListener {
-            mLoginPresenter.handleLogin(edt_email_login.text.toString().trim(), edt_password_login.toString().trim())
+            loginPresenter.handleLogin(edt_email_login.text.toString().trim(), edt_password_login.toString().trim())
         }
     }
 
@@ -32,7 +32,8 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     }
 
     override fun loginFail() {
-        Toast.makeText(this,"Your email or your password not correct!!",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,"Your email or your password not correct!!", Toast.LENGTH_SHORT).show()
     }
 
 }
+

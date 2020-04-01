@@ -53,7 +53,7 @@ class ParseDataWithJson {
     }
 
     private fun parseJsonToObject(jsonObjectUser: JSONObject): User {
-        var user: User? = null
+        lateinit var user: User
         try {
             jsonObjectUser?.let {
                 user = User(email = jsonObjectUser.getString(UserEntry.EMAIL),
@@ -62,6 +62,7 @@ class ParseDataWithJson {
         } catch (e: JSONException) {
             e.printStackTrace()
         }
-        return user!!
+        return user
     }
+
 }

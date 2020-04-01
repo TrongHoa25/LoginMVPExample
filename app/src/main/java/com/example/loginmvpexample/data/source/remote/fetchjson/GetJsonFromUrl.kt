@@ -7,7 +7,7 @@ import org.json.JSONException
 import org.json.JSONObject
 
 class GetJsonFromUrl constructor(
-    private val mListener: OnFetchDataJsonListener<User>?
+    private var onFetchDataJsonListener: OnFetchDataJsonListener<User>?
 ) : AsyncTask<String, Void, String>() {
     private val LOG = GetDataJson::class.java.simpleName
 
@@ -17,7 +17,7 @@ class GetJsonFromUrl constructor(
             val parseDataWithJson = ParseDataWithJson()
             data = parseDataWithJson.getJsonFromUrl(strings[0])!!
         } catch (e: Exception) {
-            mListener!!.onError(e)
+            onFetchDataJsonListener!!.onError(e)
         }
         return data
     }
@@ -27,10 +27,11 @@ class GetJsonFromUrl constructor(
         if (data != null) {
             try {
                 val jsonObject = JSONObject(data)
-                mListener!!.onSuccess(ParseDataWithJson().parseJsonToData(jsonObject))
+                onFetchDataJsonListener?.onSuccess(ParseDataWithJson().parseJsonToData(jsonObject))
             } catch (e: JSONException) {
                 e.printStackTrace()
             }
         }
     }
+
 }

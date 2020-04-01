@@ -4,15 +4,15 @@ import com.example.loginmvpexample.data.model.User
 import com.example.loginmvpexample.data.source.UserRepository
 import com.example.loginmvpexample.data.source.remote.OnFetchDataJsonListener
 
-class LoginPresenter(private var mUserRepository: UserRepository) : LoginContract.Presenter {
-    private lateinit var mView: LoginContract.View
+class LoginPresenter(private var userRepository: UserRepository) : LoginContract.Presenter {
+    private lateinit var view: LoginContract.View
     override fun handleLogin(email: String, password: String) {
-        mUserRepository.getData(object : OnFetchDataJsonListener<User> {
+        userRepository.getData(object : OnFetchDataJsonListener<User> {
             override fun onSuccess(data: List<User>?) {
-                if (compare(email, password, data!!)){
-                    mView.loginSuccess()
+                if (compare(email, password, data!!)) {
+                    view.loginSuccess()
                 } else {
-                    mView.loginFail()
+                    view.loginFail()
                 }
             }
 
@@ -41,4 +41,5 @@ class LoginPresenter(private var mUserRepository: UserRepository) : LoginContrac
         }
         return false
     }
+
 }
