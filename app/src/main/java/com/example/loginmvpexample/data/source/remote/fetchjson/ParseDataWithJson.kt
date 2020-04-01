@@ -13,6 +13,7 @@ class ParseDataWithJson {
     private val TIME_OUT = 15000
     private val METHOD_GET = "GET"
     private val LOG = ParseDataWithJson::class.java.simpleName
+
     @Throws(Exception::class)
     fun getJsonFromUrl(urlString: String?): String? {
         val url = URL(urlString)

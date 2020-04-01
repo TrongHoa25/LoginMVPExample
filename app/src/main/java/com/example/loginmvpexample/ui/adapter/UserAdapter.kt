@@ -12,8 +12,8 @@ import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.single_list_item.view.*
 
 class UserAdapter(private var items: List<User> = ArrayList(),
-        private var context: Context): RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
-
+                  private var context: Context
+) : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         return UserViewHolder(LayoutInflater.from(context).inflate(R.layout.single_list_item, parent, false))
     }
@@ -21,6 +21,7 @@ class UserAdapter(private var items: List<User> = ArrayList(),
     override fun getItemCount(): Int {
         return items.size
     }
+
     class UserViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val email: TextView = itemView.text_email
         val password: TextView = itemView.text_password

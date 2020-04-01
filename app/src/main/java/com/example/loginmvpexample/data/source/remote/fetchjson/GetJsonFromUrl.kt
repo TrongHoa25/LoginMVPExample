@@ -8,8 +8,9 @@ import org.json.JSONObject
 
 class GetJsonFromUrl constructor(
     private val mListener: OnFetchDataJsonListener<User>?
-): AsyncTask<String, Void, String>() {
+) : AsyncTask<String, Void, String>() {
     private val LOG = GetDataJson::class.java.simpleName
+
     override fun doInBackground(vararg strings: String?): String? {
         var data = ""
         try {
