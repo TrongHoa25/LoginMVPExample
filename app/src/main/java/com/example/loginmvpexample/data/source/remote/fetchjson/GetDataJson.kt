@@ -5,8 +5,10 @@ import com.example.loginmvpexample.data.model.User
 import com.example.loginmvpexample.data.source.remote.OnFetchDataJsonListener
 
 class GetDataJson(private var mListener: OnFetchDataJsonListener<User>?) {
+
     fun getData() {
         val url = Constant.BASE_URL
         GetJsonFromUrl(mListener).execute(url)
     }
+
 }

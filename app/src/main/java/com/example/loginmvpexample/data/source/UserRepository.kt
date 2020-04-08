@@ -6,18 +6,18 @@ import com.example.loginmvpexample.data.source.remote.OnFetchDataJsonListener
 import com.example.loginmvpexample.data.source.remote.UserRemoteDataSource
 
 class UserRepository(
-    private val mUserLocalDataSource: UserLocalDataSource,
-    private val mUserRemoteDataSource: UserRemoteDataSource
+    private val userLocalDataSource: UserLocalDataSource,
+    private val userRemoteDataSource: UserRemoteDataSource
 ){
 
     private object HOLDER {
         val INSTANCE = UserRepository(
-            mUserLocalDataSource = UserLocalDataSource.instance,
-            mUserRemoteDataSource = UserRemoteDataSource.instance)
+            userLocalDataSource = UserLocalDataSource.instance,
+            userRemoteDataSource = UserRemoteDataSource.instance)
     }
 
      fun getData(listener: OnFetchDataJsonListener<User>) {
-        mUserRemoteDataSource.getData(listener)
+        userRemoteDataSource.getData(listener)
     }
 
     companion object{
