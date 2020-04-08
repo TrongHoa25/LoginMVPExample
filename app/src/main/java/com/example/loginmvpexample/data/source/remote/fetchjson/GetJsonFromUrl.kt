@@ -33,5 +33,4 @@ class GetJsonFromUrl constructor(
             }
         }
     }
-
 }

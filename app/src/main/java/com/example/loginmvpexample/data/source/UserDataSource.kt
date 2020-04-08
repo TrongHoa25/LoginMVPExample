@@ -11,5 +11,4 @@ interface UserDataSource {
     interface RemoteDataSource {
         fun getData(listener: OnFetchDataJsonListener<User>)
     }
-
 }

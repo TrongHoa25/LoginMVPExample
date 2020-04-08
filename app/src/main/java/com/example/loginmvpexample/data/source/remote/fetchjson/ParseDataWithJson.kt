@@ -41,10 +41,9 @@ class ParseDataWithJson {
         try {
             val jsonArray = jsonObject.getJSONArray(UserEntry.USER)
             for (i in 0 until jsonArray.length()) {
-
                 val userJson = jsonArray.getJSONObject(i)
                 val user = parseJsonToObject(userJson)
-                userList.add(user)
+                user?.let { userList.add(it) }
             }
         } catch (e: JSONException) {
             e.printStackTrace()
@@ -52,8 +51,8 @@ class ParseDataWithJson {
         return userList
     }
 
-    private fun parseJsonToObject(jsonObjectUser: JSONObject): User {
-        lateinit var user: User
+    private fun parseJsonToObject(jsonObjectUser: JSONObject): User? {
+        var user: User? = null
         try {
             jsonObjectUser?.let {
                 user = User(email = jsonObjectUser.getString(UserEntry.EMAIL),
@@ -64,5 +63,4 @@ class ParseDataWithJson {
         }
         return user
     }
-
 }

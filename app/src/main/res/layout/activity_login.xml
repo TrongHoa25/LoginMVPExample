@@ -6,41 +6,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
-    android:padding="16dp">
+    android:padding="@dimen/dp_16">
     <RelativeLayout
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/iv_Logo"
-            android:layout_width="113dp"
-            android:layout_height="117dp"
+            android:id="@+id/imageLogo"
+            android:layout_width="@dimen/dp_113"
+            android:layout_height="@dimen/dp_117"
             android:layout_centerHorizontal="true"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             android:src="@drawable/logo" />
         <LinearLayout
-            android:id="@+id/ll_RegisterAndLogin"
+            android:id="@+id/linearRegisterAndLogin"
             android:layout_width="match_parent"
-            android:layout_height="36dp"
+            android:layout_height="@dimen/dp_36"
             android:orientation="horizontal"
-            android:layout_below="@id/iv_Logo"
-            android:layout_marginTop="16dp"
+            android:layout_below="@id/imageLogo"
+            android:layout_marginTop="@dimen/dp_16"
             android:weightSum="2"
-            android:padding="2dp"
+            android:padding="@dimen/dp_2"
             android:background="@drawable/bg_login_register_inactive">
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="@dimen/dp_0"
                 android:layout_height="match_parent"
                 android:text="@string/login"
-                android:textSize="22sp"
+                android:textSize="@dimen/sp_22"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:background="@drawable/bg_login_register_active"/>
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="@dimen/dp_0"
                 android:layout_height="match_parent"
                 android:text="@string/register"
                 android:textStyle="bold"
@@ -48,33 +48,33 @@
                 android:gravity="center"/>
         </LinearLayout>
         <EditText
-            android:id="@+id/edt_email_login"
+            android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_RegisterAndLogin"
+            android:layout_below="@+id/linearRegisterAndLogin"
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_edittext"
             android:hint="@string/enter_your_email"
-            android:padding="8dp"
+            android:padding="@dimen/dp_8"
             android:inputType="textEmailAddress"/>
         <EditText
-            android:id="@+id/edt_password_login"
+            android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/edt_email_login"
-            android:layout_marginTop="8dp"
+            android:layout_below="@+id/editTextEmail"
+            android:layout_marginTop="@dimen/dp_8"
             android:background="@drawable/bg_edittext"
             android:hint="@string/enter_your_password"
-            android:padding="8dp"
+            android:padding="@dimen/dp_8"
             android:inputType="textPassword"/>
 
         <Button
-            android:id="@+id/btn_register_login"
+            android:id="@+id/buttonRegisterLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/edt_password_login"
-            android:layout_marginTop="8dp"
-            android:padding="8dp"
+            android:layout_below="@id/editTextPassword"
+            android:layout_marginTop="@dimen/dp_8"
+            android:padding="@dimen/dp_8"
             android:text="@string/login"/>
     </RelativeLayout>
 

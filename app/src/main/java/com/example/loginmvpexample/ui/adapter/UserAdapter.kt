@@ -23,8 +23,8 @@ class UserAdapter(private var items: List<User> = ArrayList(),
     }
 
     class UserViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val email: TextView = itemView.text_email
-        val password: TextView = itemView.text_password
+        val email: TextView = itemView.textEmail
+        val password: TextView = itemView.textPassword
         public fun bind(user: User){
             email.text = user.email
             password.text = user.password
@@ -34,5 +34,4 @@ class UserAdapter(private var items: List<User> = ArrayList(),
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         holder.bind(items[position])
     }
-
 }

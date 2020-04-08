@@ -1,12 +1,13 @@
 package com.example.loginmvpexample.ui.login
 
+import android.text.Editable
 import com.example.loginmvpexample.data.model.User
 import com.example.loginmvpexample.data.source.UserRepository
 import com.example.loginmvpexample.data.source.remote.OnFetchDataJsonListener
 
 class LoginPresenter(private var userRepository: UserRepository) : LoginContract.Presenter {
     private lateinit var view: LoginContract.View
-    override fun handleLogin(email: String, password: String) {
+    override fun onLogin(email: String, password: String) {
         userRepository.getData(object : OnFetchDataJsonListener<User> {
             override fun onSuccess(data: List<User>?) {
                 if (compare(email, password, data!!)) {
@@ -41,5 +42,4 @@ class LoginPresenter(private var userRepository: UserRepository) : LoginContract
         }
         return false
     }
-
 }
