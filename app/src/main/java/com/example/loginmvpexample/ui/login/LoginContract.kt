@@ -12,4 +12,5 @@ class LoginContract {
     interface Presenter: BasePresenter<View> {
         fun handleLogin(email: String, password: String)
     }
+
 }

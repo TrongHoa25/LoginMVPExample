@@ -16,8 +16,11 @@ class UserRemoteDataSource :UserDataSource.RemoteDataSource{
         }
     }
 
-    override fun getData(listener: OnFetchDataJsonListener<User>) {
-        val getDataJson: GetDataJson = GetDataJson(listener)
+    override fun getData(onFetchDataJsonListener: OnFetchDataJsonListener<User>) {
+        val getDataJson: GetDataJson = GetDataJson(onFetchDataJsonListener)
         getDataJson.getData()
     }
+
 }
+
+

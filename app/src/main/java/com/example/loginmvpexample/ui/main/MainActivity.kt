@@ -15,26 +15,27 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), UserContract.View {
 
-    private lateinit var mUserAdapter: UserAdapter
-    private lateinit var mUserRepository: UserRepository
-    private lateinit var mUserPresenter: UserPresenter
+    private lateinit var userAdapter: UserAdapter
+    private lateinit var userRepository: UserRepository
+    private lateinit var userPresenter: UserPresenter
     private val manager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mUserRepository = UserRepository.instance
-        mUserPresenter = UserPresenter(this,mUserRepository)
-        mUserPresenter.setView(this)
-        mUserPresenter.getUserList()
+        userRepository = UserRepository.instance
+        userPresenter = UserPresenter(this,userRepository)
+        userPresenter.setView(this)
+        userPresenter.getUserList()
     }
 
     override fun sendAllUser(list: MutableList<User>) {
-        mUserAdapter = UserAdapter(list,this)
+        userAdapter = UserAdapter(list,this)
         rv_users.layoutManager = manager
-        rv_users.adapter = mUserAdapter
+        rv_users.adapter = userAdapter
     }
 
     override fun onError(exception: Exception) {
         TODO("Not yet implemented")
     }
+
 }

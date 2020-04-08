@@ -13,4 +13,5 @@ class UserContract {
     interface Presenter: BasePresenter<View> {
         fun getUserList()
     }
+
 }
