@@ -2,46 +2,46 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp"
-    android:layout_marginTop="8dp">
+    android:padding="@dimen/dp_8"
+    android:layout_marginTop="@dimen/dp_8">
     <LinearLayout
-        android:id="@+id/ll_content_email"
+        android:id="@+id/linearContentEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="4"
         android:orientation="horizontal">
         <TextView
             android:text="@string/email"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/dp_0"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="15sp"/>
+            android:textSize="@dimen/sp_16"/>
         <TextView
-            android:id="@+id/text_email"
-            android:layout_width="0dp"
+            android:id="@+id/textEmail"
+            android:layout_width="@dimen/dp_0"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:textSize="15sp"/>
+            android:textSize="@dimen/sp_16"/>
     </LinearLayout>
     <LinearLayout
-        android:id="@+id/ll_content_password"
+        android:id="@+id/linearContentPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="4"
         android:orientation="horizontal"
-        android:layout_below="@id/ll_content_email"
-        android:layout_marginTop="8dp">
+        android:layout_below="@id/linearContentEmail"
+        android:layout_marginTop="@dimen/dp_8">
         <TextView
             android:text="@string/password"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/dp_0"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="15sp"/>
+            android:textSize="@dimen/sp_16"/>
         <TextView
-            android:id="@+id/text_password"
-            android:layout_width="0dp"
+            android:id="@+id/textPassword"
+            android:layout_width="@dimen/dp_0"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:textSize="15sp"/>
+            android:textSize="@dimen/sp_16"/>
     </LinearLayout>
 </RelativeLayout>

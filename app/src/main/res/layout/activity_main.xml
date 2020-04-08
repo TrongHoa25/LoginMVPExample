@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainActivity"
     android:background="@color/colorWhite"
-    android:padding="16dp">
+    android:padding="@dimen/dp_16">
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_users"
+        android:id="@+id/recyclerUsers"
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

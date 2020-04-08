@@ -23,5 +23,4 @@ class UserRepository(
     companion object{
         val instance: UserRepository by lazy {HOLDER.INSTANCE}
     }
-
 }

@@ -28,15 +28,6 @@ class UserPresenter(private val activity: Activity,
         this.view = view
     }
 
-    companion object {
-        private lateinit var instance: UserPresenter
-        fun getInstance(activity: Activity, userRepositoy: UserRepository): UserPresenter {
-            if (instance == null) {
-                instance = UserPresenter(activity, userRepositoy)
-            }
-            return instance
-        }
-    }
     override fun onStart() {
         TODO("Not yet implemented")
     }
@@ -44,5 +35,4 @@ class UserPresenter(private val activity: Activity,
     override fun onStop() {
         TODO("Not yet implemented")
     }
-
 }

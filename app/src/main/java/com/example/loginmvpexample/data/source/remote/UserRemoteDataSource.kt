@@ -20,7 +20,4 @@ class UserRemoteDataSource :UserDataSource.RemoteDataSource{
         val getDataJson: GetDataJson = GetDataJson(onFetchDataJsonListener)
         getDataJson.getData()
     }
-
 }
-
-

@@ -10,5 +10,4 @@ class UserLocalDataSource : UserDataSource.LocalDataSource {
     companion object {
         val instance: UserLocalDataSource by lazy { HOLDER.INSTANCE }
     }
-
 }
